@@ -82,7 +82,10 @@ public class Cafe implements java.io.Serializable {
 
     // ─── Torneos ──────────────────────────────────────────────────────
     public void agregarTorneo(Torneo t)  { torneos.add(t); }
-    public List<Torneo> getTorneos()     { return torneos; }
+    public List<Torneo> getTorneos() {
+        if (torneos == null) torneos = new ArrayList<>();
+        return torneos;
+    }
 
     public Torneo buscarTorneoPorNombre(String nombre) {
         for (Torneo t : torneos)
